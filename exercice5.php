@@ -1,22 +1,11 @@
 <?php
-function compterVoyelles($mot) {
-    $voyelles = array("a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y");
-    $nbVoyelles = 1;
+ $tab1=array(5,8,40,6,27);
+ $tab2=array(8,7,3,24,6);
+ $elementsCommuns = array_intersect($tab1, $tab2);
 
-    // Parcours chaque lettre du mot
-    for ($i = 0; $i < strlen($mot); $i++) {
-        $lettre = $mot[$i];
-        if (in_array($lettre, $voyelles)) {
-            $nbVoyelles++;
-        }
-    }
-
-    return $nbVoyelles;
-}
-
-// Parcours chaque mot du tableau
-foreach ($mots as $mot) {
-    $nbVoyelles = compterVoyelles($mot);
-    echo "Le mot \"$mot\" contient $nbVoyelles voyelle(s).\n";
-}
+ // Afficher les éléments communs
+ echo "Les éléments communs sont : ";
+ foreach ($elementsCommuns as $element) {
+     echo $element . " ";
+ }
 ?>
